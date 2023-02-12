@@ -12,8 +12,6 @@ using NosSmooth.Game.Apis.Safe;
 using NosSmooth.Game.Apis.Unsafe;
 using NosSmooth.Game.Contracts;
 using NosSmooth.Game.Events.Core;
-using NosSmooth.Game.Events.Inventory;
-using NosSmooth.Game.Events.Ui;
 using NosSmooth.Game.PacketHandlers.Act4;
 using NosSmooth.Game.PacketHandlers.Characters;
 using NosSmooth.Game.PacketHandlers.Entities;
@@ -24,7 +22,6 @@ using NosSmooth.Game.PacketHandlers.Relations;
 using NosSmooth.Game.PacketHandlers.Skills;
 using NosSmooth.Game.PacketHandlers.Specialists;
 using NosSmooth.Game.PacketHandlers.Ui;
-using NosSmooth.Packets.Server.Raids;
 
 namespace NosSmooth.Game.Extensions;
 
@@ -72,6 +69,7 @@ public static class ServiceCollectionExtensions
 
             // mates
             .AddPacketResponder<MatesInitResponder>()
+            .AddPacketResponder<PtctlResponder>()
 
             // map
             .AddPacketResponder<AtResponder>()
